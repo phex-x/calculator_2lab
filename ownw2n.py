@@ -145,25 +145,31 @@ def word_to_num(number_sentence):
     return total_sum
 
 s=input().split()
-for i in range(len(s)):
+for i in range(len(s)-1):
     if s[i]=='плюс':
         s[i]='+'
     elif s[i]=='минус':
         s[i]='-'
-    elif s[i]=='умножить' or s[i]=='на':
+    elif s[i]=='умножить' and s[i+1]=='на':
         s[i]='*'
-    elif s[i]=='поделить':
+        del s[i+1]
+    elif s[i]=='поделить' and s[i+1]=='на':
         s[i]='/'
+        del s[i+1]
     else:
         s[i]=(word_to_num(s[i]))
+n=len(s)
 
-for i in range(len(s)-1):
-    if s[i]=='*' and s[i+1]=='*':
-        del s[i]
-    if s[i]=='/' and s[i+1]=='/':
-        del s[i]
-print(s)
+if type(s[n-1]!='<class 'int'>'):
+
+
+for i in range(len(s)-1): 
+    if (s[i]!='/' and s[i]!='*' and s[i]!='+' and s[i]!='-') and (s[i+1]!='/' and s[i+1]!='*' and s[i+1]!='+' and s[i+1]!='-'):
+        s[i]+=s[i+1]
+        s[i+1]=''
+
 new_s=''
 for i in range(len(s)):
     new_s+=str(s[i])
+print(new_s)
 print(eval(new_s))
