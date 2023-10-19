@@ -159,8 +159,8 @@ for i in range(len(s)-1):
     else:
         s[i]=(word_to_num(s[i]))
 n=len(s)
-
-if type(s[n-1])!='int':
+print(type(s[n-1])=='int')
+if type(s[n-1])!='str':
     s[n-1]=word_to_num(s[n-1])
 
 for i in range(len(s)-1): 
