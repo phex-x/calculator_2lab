@@ -161,6 +161,9 @@ for i in range(len(s)-1):
 n=len(s)
 print(type(s[n-1])=='int')
 if type(s[n-1])!='str':
+    print('shit')
+
+if type(s[n-1])!='int':
     s[n-1]=word_to_num(s[n-1])
 
 for i in range(len(s)-1): 
@@ -173,4 +176,3 @@ for i in range(len(s)):
     new_s+=str(s[i])
 print(new_s)
 print(eval(new_s))
-print(123123)
