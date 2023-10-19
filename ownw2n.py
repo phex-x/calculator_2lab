@@ -162,7 +162,7 @@ for i in range(len(s)-1):
         s[i]=word_to_num(s[i])
 n=len(s)
 
-if not int(s[n-1]):
+if not(str(s[n-1]).isnumeric()):
     s[n-1]=word_to_num(s[n-1])
 
 for i in range(len(s)-1): 
