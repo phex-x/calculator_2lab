@@ -160,8 +160,8 @@ for i in range(len(s)-1):
         s[i]=(word_to_num(s[i]))
 n=len(s)
 
-if type(s[n-1]!='<class 'int'>'):
-
+if type(s[n-1])!='int':
+    s[n-1]=word_to_num(s[n-1])
 
 for i in range(len(s)-1): 
     if (s[i]!='/' and s[i]!='*' and s[i]!='+' and s[i]!='-') and (s[i+1]!='/' and s[i+1]!='*' and s[i+1]!='+' and s[i+1]!='-'):
